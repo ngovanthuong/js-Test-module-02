@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let Pharmacist = function (id,name, age,address) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.getName = function () {
+            return this.name;
+        };
+        this.getAge=function () {
+            return this.age;
+        };
+        this.getAddress=function () {
+            return this.address;
+        }
+    };
+    let PharmacistManager=function () {
+        this.list=[];
+        this.addList=function (pharmacist) {
+            this.list.push(pharmacist);
+        };
+
+        this.displayList=function () {
+            for(let i= 0; i<this.list.length; i++){
+              console.log("name:"+this.list[i].getName() +" "+"age: " +this.list[i].getAge()+" "+"address: "+this.list[i].getAddress())
+            }
+
+        }
+    };
+    let pharmacist1=new Pharmacist(1,"tram anh",20,"ha noi");
+    let pharmacist2=new Pharmacist(2,"ngoc trinh",25,"tp hcm");
+    let pharmacistManager1=new PharmacistManager;
+    pharmacistManager1.addList(pharmacist1);
+    pharmacistManager1.addList(pharmacist2);
+   pharmacistManager1.displayList();
+
+
+</script>
+
+</body>
+</html>
